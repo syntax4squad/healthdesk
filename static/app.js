@@ -36,7 +36,11 @@ document.querySelectorAll('.quick-btn[data-q]').forEach(btn => {
 function appendMessage(role, text, riskLevel, sources) {
   const div = document.createElement('div');
   div.className = `msg ${role}` + (riskLevel ? ` risk-${riskLevel}` : '');
-  div.textContent = text;
+  const content = document.createElement('div');
+  content.className = 'message-content';
+  content.innerHTML = DOMPurify.sanitize(marked.parse(text));
+
+  div.appendChild(content);
 
   if (sources && sources.length) {
     const details = document.createElement('details');

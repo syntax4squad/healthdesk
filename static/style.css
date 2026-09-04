@@ -40,12 +40,23 @@
     margin: 16px 0;
 }
 
+.message-content {
+    min-width: 0;
+}
+
 .message-content table {
     width: 100%;
     border-collapse: collapse;
     margin: 12px 0;
     font-size: 0.9rem;
-    overflow-x: auto;
+}
+
+.message-content th,
+.message-content td {
+    border: 1px solid var(--border);
+    padding: 8px 10px;
+    text-align: left;
+    vertical-align: top;
 }
 
 .message-content th,
@@ -239,7 +250,7 @@ a { color: var(--teal); text-decoration: none; }
   gap: 14px;
 }
 
-.msg { max-width: 82%; padding: 12px 14px; border-radius: 12px; line-height: 1.5; font-size: 0.95rem; white-space: pre-wrap; }
+.msg { max-width: 82%; padding: 12px 14px; border-radius: 12px; line-height: 1.5; font-size: 0.95rem;}
 .msg.user { align-self: flex-end; background: var(--teal); color: white; border-bottom-right-radius: 3px; }
 .msg.assistant { align-self: flex-start; background: #f1f5f4; color: var(--text); border-bottom-left-radius: 3px; }
 .msg.system { align-self: center; background: #fff7ed; color: #92400e; border: 1px solid #fde68a; font-size: 0.85rem; }
